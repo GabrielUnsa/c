@@ -1,0 +1,40 @@
+Gramatica de Conjunto en EBNF
+
+
+<principal> -> 'fun' 'Principal' '{' <entrada> '}'
+
+<entrada> -> { <sentencia> ';' }
+
+<sentencia> -> <asignacion> | <impersion>
+
+<asignacion> -> <id> '=' <conjunto> | <id> '=' <operacion>
+
+<imprecion> -> 'print' ' ' ' <exprecion> ' ' '
+
+<exprecion> -> <id> | <operacion> | <boolean>
+
+<id> -> ['_']<nomb>['_']<num>
+
+<conjunto> -> '{' <num> { ',' <num> } '}' | '{}'
+
+<nomb> -> <letra><nomb> | <letra>
+
+<num> -> <dig><num> | <dig>
+
+<dig> -> 0|1|2|3|4|5|6|7|8|9
+
+<letra> -> a|b|....|z|A|B|....Z
+
+<boolean> ->  <igualdad> | <pertenencia> 
+<operacion> -> <diferencia> | <interseccion> | <union>
+
+<igualdad> -> <conjunto> '==' <conjunto> | <id> '==' <id>
+
+<pertenencia> -> <int> '$' <conjunto> | <num> '$' <id>
+
+<diferencia> -> <conjunto> '-' <conjunto> | <id> '-' <id>
+
+<interseccion> -> <conjunto> '/' <conjunto> | <id> '/' <id>
+
+<union> -> <conjunto> '+' <conjunto> | <id> '+' <id>
+
